@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add An Author!</h1>
+    <form action="/save/author" method = "POST">
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name">
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name">
+
+        <input type="submit" value="Submit">
+    </form>
+    <hr>
+    <h2>All Authors</h2>
+    {% for author in authors %}
+    <a href="/author/{{author.id}}"> {{author.first_name}} {{author.last_name}} </a> <br>
+    {% endfor %}
+    <hr>
+    <a href="/add/book">Add A Book</a>
+</body>
+</html>

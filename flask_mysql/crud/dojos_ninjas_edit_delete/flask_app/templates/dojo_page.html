@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dojo: {{dojo.name}}</h1>  
+    {% for ninja in dojo.ninjas %}
+    <p> Ninja Name: {{ninja.first_name}} {{ninja.last_name}} </p>
+    <a href="/edit/ninja/{{ninja.id}}">EDIT NINJA</a> |
+    <a href="/delete/{{ninja.id}}">DELETE NINJA</a>
+    <hr>
+    {% endfor %}
+    <a href="/">CREATE DOJO</a>
+    <a href="/create/ninja/page">CREATE NINJA</a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Pizzas</h1>
+    {% for pizza in pizzas %}
+    <a href="/pizza/{{pizza.id}}"> {{pizza.name}} </a>
+    {% endfor %}
+    <hr>
+    <a href="/">Create Restaurant</a> |
+    <a href="/add/pizza">Add Pizza</a> |
+    <a href="existing/restaurants">Existing Restaurants</a> |
+    <a href="/create/topping">Include Your Topping</a>
+</body>
+</html>

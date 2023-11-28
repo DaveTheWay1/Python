@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add Your Toppings!</h1>
+    <form action="/save/pizza/add/ons" method = "POST">
+        <label for="pizza_id">Select Pizza:</label>
+        <select name="pizza_id">
+            {% for pizza in pizzas %}
+            <option value="{{pizza.id}}"> {{pizza.name}} </option>
+            {% endfor %}
+        </select>
+
+        <label for="topping_id">Select Topping</label>
+        <select name="topping_id">
+            {% for topping in toppings%}
+            <option value="{{topping.id}}"> {{topping.name}} </option>
+            {% endfor %}
+        </select>
+
+        <input type="submit" value="Submit">
+    </form>
+    <hr>
+    <a href="/add/pizza">Don't See Your Pizza? Add Your Pizza Here!</a> <br>
+    <a href="/create/topping">Don't See Your Desired Topping? Add Your Topping Here</a> <br>
+    <a href="/">Home! Back To Adding Your Restaurant</a> <br>
+    {% for pizza in pizzas%}
+    <a href="/pizza/toppings/{{pizza.id}}">Done?! View Your Pizza Here</a>
+    {% endfor %}
+</body>
+</html>

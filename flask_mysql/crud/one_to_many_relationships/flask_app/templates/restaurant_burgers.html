@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p> {{restaurant.name}} </p>
+
+    <!-- we do this the way we did so below in line 16 because we want to get into the burgers list 
+    found connected to our restaurant. we cannot simply do for burger in rest. bc rest. is singular, 
+    we dont have a list of rest. but only one rest. and with that one rest. is a list of burgers. -->
+
+    {% for burger in restaurant.burgers %}
+        <p> {{burger.name}} </p>
+    {% endfor %}
+
+</body>
+</html>

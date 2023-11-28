@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1{
+        border: solid black 1px;
+        background-color: tan;
+        box-shadow: 5px 5px;
+    }
+    h3{
+        border: solid black 1px;
+        width: 115px;
+        background-color:brown;
+        box-shadow: 2px 5px;
+    }
+    form{
+        border: solid black 1px;
+        height: 100px;
+        background-color: grey;
+        box-shadow: 5px 5px;
+    }
+    label,input{
+        margin-top: 40px;
+    }
+    .btn{
+        box-shadow: 2px 5px;
+    }
+</style>
+<body>
+    <h1>Index Page</h1>
+    <h3>Create a User</h3>
+    <form action='/users' method='post'>
+        <label for='name'>Name:</label>
+        <input type='text' name='name'>
+        <label for='email'>Email:</label>
+        <input type='text' name='email'>
+        <input class= btn type='submit' value='create user'>
+    </form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    form{
+        margin-bottom: 25px;
+    }
+</style>
+<body>
+    <form method="post" action="/process">
+        <input type="hidden" name="which_form" value="register">
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name"> <br>
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name"> <br>
+        <label for="email">Email:</label>
+        <input type="text" name="email"> <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password"> <br>
+        <input type="submit" value="Register">
+    </form>
+    <form method="post" action="/process">
+        <input type="hidden" name="which_form" value="login">
+        <label for="email">Email:</label>
+        <input type="text" name="email"> <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password"> <br>
+        <input type="submit" value="Login">
+    </form>
+    <!-- the key thing to note here is that although both hidden inputs have the same name and action,
+    our focus is on the value which is different between the two and therefore performs as our determinator.-->
+</body>
+</html>

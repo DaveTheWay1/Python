@@ -1,0 +1,202 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2707
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 MySQL Functions\
+\
+TEXT\
+\
+CONCAT\
+- concat basically works where you have to manually state how you want to display things.\
+If you want mr somewhere, add it where you want it. If you want a space, add it where you want it.\
+\
+ex:\
+select CONCAT('Mr. ', first_name, ' ', last_name) FROM ninjas;\
+\
+Result:\
+Is all the existing first and last names presented with Mr. before it. Exactly like the below:\
+\
+CONCAT(\'91Mr. \'91, first_name, \'91 \'91, last_name)\
+Mr. david ramirez\
+Mr. gisselle ramirez\
+Mr. mow ramirez\
+etc...\
+\
+ex using AS:\
+select CONCAT('Mr. ', first_name, ' ', last_name) AS full_name FROM ninjas;\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 Result:\
+Is all the existing first and last names presented with Mr. before it but this time around \
+With the column name full_name rather than what it was before. Exactly like the below:\
+\
+full_name\
+Mr. david ramirez\
+Mr. gisselle ramirez\
+Mr. mow ramirez\
+etc...\
+\
+ex using AS with more than one: \
+select CONCAT('Mr. ', first_name, ' ', last_name) AS full_name, age AS youth FROM ninjas;\
+\
+Result:\
+Is all the existing first and last names presented with Mr. before it but this time around \
+With the column name full_name rather than what it was before. \
+And this time pulling age and referring it to youth Exactly like the below:\
+\
+full_name		| youth\
+Mr. david ramirez     | 23\
+Mr. gisselle ramirez | 21\
+Mr. mow ramirez	| 1\
+etc...\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+CONCAT_WS\
+- concat is a bit smoother. You add what you want at the beginning and it will do it after the first value.\
+If you want a space between every value, put the space in the beginning and a space will be provided \
+Between all the values after the first value. \
+\
+ex: \
+select CONCAT_WS(' ', first_name, last_name, age) AS ninja_info FROM ninjas;\
+\
+Result:\
+ninja_info\
+david ramirez 23\
+gisselle ramirez 21\
+mow ramirez 1\
+etc...\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 * If you want something additional but not follow after every value. Just add it where you want it\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+Ex.\
+select CONCAT_WS(' ', 'first', first_name, 'cool',last_name, age) AS ninja_info FROM ninjas;\
+\
+Result:\
+first david cool ramirez 23\
+first gisselle cool ramirez 21\
+Etc...\
+\
+LENGTH()\
+- length is a way of getting the length size of the values we have. \
+\
+Ex. \
+select LENGTH(last_name) as last_name_length from ninjas;\
+\
+Result:\
+last_name_length\
+7\
+7\
+7\
+7\
+15\
+Etc\
+\
+* We can even combine what we know for better and clearer results\
+\
+Ex. \
+select concat_ws(' ', last_name, LENGTH(last_name)) as last_name_length from ninjas;\
+\
+Result:\
+\
+ramirez 7\
+ramirez 7 \
+ramirez 7\
+ramirez 7\
+ramirez-vazquez 15\
+etc.... \
+\
+LOWER()\
+- lower puts the value in all lower case \
+\
+Ex. \
+select lower(first_name) as first_name_lowercase from ninjas;\
+\
+\
+\
+Result:\
+first_name_lowercase\
+david\
+gisselle\
+mow\
+etc... \
+UPPER()\
+- upper does the opposite of lower(). It puts all the characters in upper case. \
+\
+\'97DATE\'97\
+HOUR()\
+- hour() retrieves the hour you desire of an existing value. \
+\
+Ex. \
+select hour(created_at) as join_hour from ninjas;\
+\
+Result:\
+joined_hour\
+13\
+13\
+13\
+13\
+Etc...\
+Putting \'93time\'94 instead of hour does the exact same except it gives you the actual time.\
+\
+DAYNAME()\
+- retrieves the day of the week of the existing dates that you require\
+Ex. \
+select dayname(created_at) as weekday_joined from ninjas;\
+\
+Result:\
+Sunday\
+Sunday\
+Sunday \
+Sunday\
+Etc... \
+\
+\
+MONTH()\
+- month() retrieves the month of the existing date that you desire.\
+\
+Ex. \
+select month(created_at) as month_joined from ninjas;\
+\
+Result:\
+month_joined\
+7\
+7\
+7\
+7\
+\
+\
+NOW()\
+- allows you to see the date and time of right now\
+\
+Ex. select now() as right_now;\
+\
+Result:\
+right_now\
+2023-07-06 20:01:58\
+\
+\
+DATE_FORMAT()\
+- allows you to present your date in the common clear way we see on a daily basis\
+\
+Ex.\
+select DATE_FORMAT(created_at, '%W %M %e, %Y') AS date from ninjas;\
+Date\
+Sunday July 2, 2023\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 Sunday July 2, 2023\
+Sunday July 2, 2023\
+Sunday July 2, 2023\
+Etc\'85\
+The comma after %e was included but it. Is not. Necessary. Comes to show that it does not affect it.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\
+\
+\
+\
+}

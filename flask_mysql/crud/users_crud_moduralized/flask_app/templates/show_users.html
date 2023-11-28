@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>USERS</h1>
+    <hr>
+    <a href="/">CREATE USER</a>
+    <hr>
+    {% for user in users %}
+        <p>First Name: {{user.first_name}} </p>
+        <p>Last Name: {{user.last_name}} </p>
+        <p>Email: {{user.email}} </p>
+        <a href="/get/user/{{user.id}}">SHOW USER</a>
+        <a href="/edit/page/{{user.id}}">UPDATE USER INFORMATION</a>
+        <a href="/delete/{{user.id}}">DELETE USER</a>
+        <hr>
+    {% endfor %}
+</body>
+</html>

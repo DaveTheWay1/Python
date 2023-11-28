@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add Your Pizza!</h1>
+    <form action="/save/pizza" method = "POST">
+        <label for="restaurant_id">Pizza Restaurant</label>
+        <select name="restaurant_id">
+            {% for restaurant in restaurants %}
+            <option value="{{restaurant.id}}"> {{restaurant.name}} </option>
+            {% endfor %}
+        </select>
+<hr>
+        <label for="name">Pizza Name:</label>
+        <input type="text" name="name">
+<hr>
+        <label for="crust">Pizza Style Crust:</label>
+        <input type="text" name="crust">
+<hr>
+        <label for="size">Pizza Size:</label>
+        <input type="text" name="size">
+<hr>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

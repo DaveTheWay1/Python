@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Recipe Share</h1>
+    <hr>
+
+    <h2>Register</h2>
+    <form action="/register", method = "POST">
+        {% with messages = get_flashed_messages(RegErr) %}
+            {% if messages %}
+                {% for message in messages %}
+                    {{message}}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <label for="first_name">First Name</label>
+        <input type="text" name="first_name">
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name">
+
+        <label for="email">Email:</label>
+        <input type="text" name="email">
+
+        <label for="password">Password:</label>
+        <input type="password" name="password">
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <hr>
+    <h2>Login</h2>
+    <form action="/login" method = "POST">
+        {% with messages = get_flashed_messages(LoginErr) %}
+            {% if messages %}
+                {% for message in messages %}
+                    {{message}}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <label for="email">Email:</label>
+        <input type="text" name="email">
+
+        <label for="password">Password:</label>
+        <input type="text" name="password">
+
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>

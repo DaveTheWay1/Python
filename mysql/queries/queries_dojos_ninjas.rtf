@@ -1,0 +1,91 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2707
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Light;}
+{\colortbl;\red255\green255\blue255;\red17\green31\blue78;\red250\green250\blue250;\red17\green31\blue78;
+\red250\green250\blue250;}
+{\*\expandedcolortbl;;\cssrgb\c8235\c17255\c38039;\cssrgb\c98431\c98431\c98431;\cssrgb\c8235\c17255\c38039;
+\cssrgb\c98431\c98431\c98431;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 USE dojos_ninjas;\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Query: Create 3 new dojos
+\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+Insert into dojos(name, created_at, updated_at) values (\'93San Jose\'94, NOW(), NOW()), (\'93Chicago\'94, NOW(), NOW()), (\'93Online\'94, NOW(), NOW());\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Query: Delete the 3 dojos you just created
+\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+DELETE from dojos where id = 1 or id = 2 or id = 3;\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Query: Create 3 more dojos
+\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 Insert into dojos(name, created_at, updated_at) values (\'93Blue Dojo\'94, NOW(), NOW()), (\'93Red Dojo\'94, NOW(), NOW()), (\'93Green Dojo\'94, NOW(), NOW());\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Query: Create 3 ninjas that belong to the first dojo\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 Insert into ninjas( dojo_id, first_name, last_name, age, created_at, updated_at) values (4, \'93david\'94, \'93ramirez\'94, 23, NOW(), NOW()), (4, \'93gisselle\'94, \'93ramirez\'94, 21, NOW(), NOW()), (4, \'93mow\'94, \'93ramirez\'94, 1, NOW(), NOW()), (4, \'93mow\'94, \'93ramirez\'94, 1, NOW(), NOW());
+\f1\fs32 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb5 Query: Create 3 ninjas that belong to the second dojo\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 Insert into ninjas( dojo_id, first_name, last_name, age, created_at, updated_at) values (5, \'93papa\'94, \'93ramirez\'94, 24, NOW(), NOW()), (5, \'93mama\'94, \'93ramirez\'94, 26, NOW(), NOW()),  (5, \'93cazador\'94, \'93ramirez\'94, 5, NOW(), NOW());\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf4 \cb5 \expnd0\expndtw0\kerning0
+Query: Create 3 ninjas that belong to the third dojo
+\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 Insert into ninjas( dojo_id, first_name, last_name, age, created_at, updated_at) values (6, \'93Augustina\'94, \'93ramirez\'94, 7, NOW(), NOW()), (6, \'93zaira\'94, \'93ramirez\'94, 25, NOW(), NOW()), (6, \'93Mary\'94, \'93ramirez\'94, 31, NOW(), NOW());\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Query: Retrieve all the ninjas from the first dojo\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 SELECT * from NINJAS where dojo_id = 4;\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf4 \cb5 \expnd0\expndtw0\kerning0
+Query: Retrieve all the ninjas from the last dojo\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 SELECT * from NINJAS where dojo_id = 6; 
+\f1\fs32 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf2 \cb3 \outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb5 \outl0\strokewidth0 Query: Retrieve the last ninjas dojo\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 select dojo_id from ninjas where id = 9
+\f1\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+}

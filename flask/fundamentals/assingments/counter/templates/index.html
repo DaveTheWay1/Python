@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<style>
+    body{
+        border: solid rgb(41, 165, 182) 1px;
+        margin: auto;
+        width: 500px;
+        margin-top: 50px;
+        background-color: lightblue;
+    }
+    h1{
+        margin: auto;
+        border: solid black 1px;
+        width: 130px;
+        background-color: mediumaquamarine;
+        box-shadow: 2px 2px 2px 2px;
+        margin-bottom: 10px;
+    }
+    p{
+        margin: auto;
+        /* border: solid black 1px; */
+        width: 20px;
+    }
+    .buttons{
+        margin: auto;
+        padding-left: 5px;
+        /* border: solid black 1px; */
+        width: 150px;
+        /* justify-content: space-between; */
+    }
+    .double{
+        border: solid black 1px;
+        width: 225px;
+        margin: auto;
+        background-color: aquamarine;
+        box-shadow: 2px 2px 2px 2px;
+        margin-bottom: 10px;
+    }
+    .increment{
+        /* border: solid black 1px; */
+        margin: auto;
+        width: 250px;
+    }
+    label{
+        border: solid black 1px;
+        margin-bottom: 15px;
+        background-color: aqua;
+        box-shadow: 2px 2px 2px 2px;
+    }
+    form{
+        /* border: solid black 1px; */
+        padding: 10px;
+        width: 425px;
+        margin: auto;
+    }
+</style>
+<body>
+    <h1>Counter</h1>
+    <p>{{session['count']}}</p>
+    <div class="buttons">
+        <a href="/count" class="btn btn primary">count</a>
+        <a href="/reset" class="btn btn primary">reset</a>
+    </div>
+    <div class="double">
+        <a href="/double" class="btn btn primary">you know i had to double it</a>
+    </div>
+    <form action="/fine" method="POST">
+        <label for="num">Fine.. You Pick. Pick What? A DAMN NUMBER! DUHHH</label>
+        <br>
+        <div class="increment">
+            <input type="number" name="num">
+            <input type="submit" value="add it">
+        </div>
+    </form>
+</body>
+</html>

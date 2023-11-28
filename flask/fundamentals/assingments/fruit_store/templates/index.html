@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .groceries{
+        margin: auto;
+        width: 285px;
+    }
+</style>
+<body>
+    <form action='/purchase' method='post'>
+        <div class="groceries">
+            <label for="strawberry">Strawberry</label>
+                <select name="strawberry">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            <label for="raspberry">Raspberry</label>
+                <select name="raspberry">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            <label for="apple">Apple</label>
+                <select name="apple">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+        </div>
+        <h3>Your Information and Student ID</h3>
+        <label for="name">Full Name:</label>
+        <input type="text" name="name">
+        <label for="id">Student ID:</label>
+        <input type="number" name="id">
+        <input type="submit" value="Okay, Deal!">
+    </form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+from flask_app import app
+from flask import render_template, request, redirect
+from flask_app.models.burger import Burger
+from flask_app.models.restaurant import Restaurant
+
+@app.route('/burger')
+def burger_index():
+    restaurants = Restaurant.get_all()
+    return render_template('burger.html', all_restaurants = restaurants)
+
+@app.route('/create/burger', methods = ['POST'])
+def create_burger():
+    Burger.save(request.form)
+    return redirect('/view/burgers')
+
+@app.route('/view/burgers')
+def burgers():
+    burgers = Burger.get_all()
+    restaurants = Restaurant.get_all()
+    return render_template('burgers.html', all_burgers = burgers, all_restaurants = restaurants)
